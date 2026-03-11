@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('internships', function (Blueprint $table) {
             $table->id();
+            $table->string('name', 100);
+            $table->text('goals')->nullable();
+            $table->enum('evaluation_type', ['grade','pass_fail','percent']);
             $table->timestamps();
         });
     }
